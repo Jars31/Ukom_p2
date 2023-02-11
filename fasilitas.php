@@ -79,7 +79,7 @@ include "includes/koneksi.php";
 
     <!-- bradcam_area_start -->
     <div class="bradcam_area breadcam_bg">
-        <h3>blog</h3>
+        <h3>Fasilitas</h3>
     </div>
     <!-- bradcam_area_end -->
 
@@ -162,176 +162,248 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
     <!-- form itself end-->
     <form id="test-form" class="white-popup-block mfp-hide">
-        <div class="popup_box ">
-                <div class="popup_inner">
-                    <h3>Form Reservasi</h3>
-                    <form>
-                        <div class="row">
-                            <div class="col-xl-6">
-                                <input id="datepicker" placeholder="Tanggal Check IN" name="masuk">
-                            </div>
-                            <div class="col-xl-6">
-                                <input id="datepicker2" placeholder="Tanggal Check Out" name="keluar">
-                            </div>
-                            <div class="col-xl-12">
-                                <select class="form-select wide" id="default-select" class="" name="idkamar">
-                                    <?php
-                                        $sql = "SELECT * FROM tb_kamar";
-                                        $result = $conn->query($sql);
-                                        if ($result->num_rows > 0) {
-                                        //membaca data pada baris tabel
-                                        while ($row = $result->fetch_assoc()) {
-                                        ?>
-                                            <option value="<?php echo $row["id_kamar"]; ?>"> <?php echo $row["nama_kamar"]; ?> </option>
-                                        <?php
-                                            }
-                                        }
-                                    ?>
-                                </select>
-                            </div>
-                            <div class="col-xl-12">
-                                <input type="number" name="jkamar" placeholder="Jumlah Kamar" style="
-                                    -webkit-tap-highlight-color: transparent;
-                                    background-color: #fff;
-                                    border: solid 1px #E2E2E2;
-                                    box-sizing: border-box;
-                                    clear: both;
-                                    cursor: pointer;
-                                    display: block;
-                                    float: left;
-                                    font-family: 'Raleway',sans-serif;
-                                    border-radius: 0;
-                                    margin-bottom: 30px;
-                                    height: 50px !important;
-                                    font-size: 16px;
-                                    font-weight: 400;
-                                    color: #919191;
-                                    width: 100% !important;
-                                    line-height: 50px;
-                                    outline: none;
-                                    padding-left: 18px;
-                                    padding-right: 30px;
-                                    position: relative;
-                                    text-align: left !important;"
-                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Jumlah Kamar'" required
-                                    class="single-input">
-                            </div>
-                            <div class="col-xl-12">
-                                <input type="text" name="nama" placeholder="Nama Pemesan" style="
-                                    -webkit-tap-highlight-color: transparent;
-                                    background-color: #fff;
-                                    border: solid 1px #E2E2E2;
-                                    box-sizing: border-box;
-                                    clear: both;
-                                    cursor: pointer;
-                                    display: block;
-                                    float: left;
-                                    font-family: 'Raleway',sans-serif;
-                                    border-radius: 0;
-                                    margin-bottom: 30px;
-                                    height: 50px !important;
-                                    font-size: 16px;
-                                    font-weight: 400;
-                                    color: #919191;
-                                    width: 100% !important;
-                                    line-height: 50px;
-                                    outline: none;
-                                    padding-left: 18px;
-                                    padding-right: 30px;
-                                    position: relative;
-                                    text-align: left !important;"
-                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nama Pemesan'" required
-                                    class="single-input">
-                            </div>
-                            <div class="col-xl-12">
-                                <input type="email" name="email" placeholder="Email" style="
-                                    -webkit-tap-highlight-color: transparent;
-                                    background-color: #fff;
-                                    border: solid 1px #E2E2E2;
-                                    box-sizing: border-box;
-                                    clear: both;
-                                    cursor: pointer;
-                                    display: block;
-                                    float: left;
-                                    font-family: 'Raleway',sans-serif;
-                                    border-radius: 0;
-                                    margin-bottom: 30px;
-                                    height: 50px !important;
-                                    font-size: 16px;
-                                    font-weight: 400;
-                                    color: #919191;
-                                    width: 100% !important;
-                                    line-height: 50px;
-                                    outline: none;
-                                    padding-left: 18px;
-                                    padding-right: 30px;
-                                    position: relative;
-                                    text-align: left !important;"
-                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'" required
-                                    class="single-input">
-                            </div>
-                            <div class="col-xl-12">
-                                <input type="text" name="hp" placeholder="No Telepon" style="
-                                    -webkit-tap-highlight-color: transparent;
-                                    background-color: #fff;
-                                    border: solid 1px #E2E2E2;
-                                    box-sizing: border-box;
-                                    clear: both;
-                                    cursor: pointer;
-                                    display: block;
-                                    float: left;
-                                    font-family: 'Raleway',sans-serif;
-                                    border-radius: 0;
-                                    margin-bottom: 30px;
-                                    height: 50px !important;
-                                    font-size: 16px;
-                                    font-weight: 400;
-                                    color: #919191;
-                                    width: 100% !important;
-                                    line-height: 50px;
-                                    outline: none;
-                                    padding-left: 18px;
-                                    padding-right: 30px;
-                                    position: relative;
-                                    text-align: left !important;"
-                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'No Telepon'" required
-                                    class="single-input">
-                            </div>
-                            <div class="col-xl-12">
-                                <input type="text" name="tamu" placeholder="Nama Tamu" style="
-                                    -webkit-tap-highlight-color: transparent;
-                                    background-color: #fff;
-                                    border: solid 1px #E2E2E2;
-                                    box-sizing: border-box;
-                                    clear: both;
-                                    cursor: pointer;
-                                    display: block;
-                                    float: left;
-                                    font-family: 'Raleway',sans-serif;
-                                    border-radius: 0;
-                                    margin-bottom: 30px;
-                                    height: 50px !important;
-                                    font-size: 16px;
-                                    font-weight: 400;
-                                    color: #919191;
-                                    width: 100% !important;
-                                    line-height: 50px;
-                                    outline: none;
-                                    padding-left: 18px;
-                                    padding-right: 30px;
-                                    position: relative;
-                                    text-align: left !important;"
-                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nama Tamu'" required
-                                    class="single-input">
-                            </div>
-                            <div class="col-xl-12">
-                                <button type="submit" id="konfirmasi" class="boxed-btn3">Konfirmasi Pesanan</button>
-                            </div>
+                <div class="popup_box ">
+                        <div class="popup_inner">
+                            <h3>Form Reservasi</h3>
+                            <form id="form_pesan">
+                                <div class="row">
+                                    <div class="col-xl-6">
+                                        <input type="date" id="masuk" placeholder="Tanggal Check IN" name="masuk" style="-webkit-tap-highlight-color: transparent;
+                                          background-color: #fff;
+                                          border: solid 1px #E2E2E2;
+                                          box-sizing: border-box;
+                                          clear: both;
+                                          cursor: pointer;
+                                          display: block;
+                                          float: left;
+                                          font-family: 'Raleway',sans-serif;
+                                          border-radius: 0;
+                                          margin-bottom: 30px;
+                                          height: 50px !important;
+                                          font-size: 16px;
+                                          font-weight: 400;
+                                          color: #919191;
+                                          width: 100% !important;
+                                          line-height: 50px;
+                                          outline: none;
+                                          padding-left: 18px;
+                                          padding-right: 30px;
+                                          position: relative;
+                                          text-align: left !important">
+                                    </div>
+                                    <div class="col-xl-6">
+                                        <input type="date" id="keluar" placeholder="Tanggal Check Out" name="keluar" style="-webkit-tap-highlight-color: transparent;
+                                          background-color: #fff;
+                                          border: solid 1px #E2E2E2;
+                                          box-sizing: border-box;
+                                          clear: both;
+                                          cursor: pointer;
+                                          display: block;
+                                          float: left;
+                                          font-family: 'Raleway',sans-serif;
+                                          border-radius: 0;
+                                          margin-bottom: 30px;
+                                          height: 50px !important;
+                                          font-size: 16px;
+                                          font-weight: 400;
+                                          color: #919191;
+                                          width: 100% !important;
+                                          line-height: 50px;
+                                          outline: none;
+                                          padding-left: 18px;
+                                          padding-right: 30px;
+                                          position: relative;
+                                          text-align: left !important">
+                                    </div>
+                                    <div class="col-xl-12">
+                                        <select class="form-select wide" id="idkamar" class="" name="idkamar" style="-webkit-tap-highlight-color: transparent;
+                                                background-color: #fff;
+                                                border: solid 1px #E2E2E2;
+                                                box-sizing: border-box;
+                                                clear: both;
+                                                cursor: pointer;
+                                                display: block;
+                                                float: left;
+                                                font-family: 'Raleway',sans-serif;
+                                                font-weight: normal;
+                                                width: 100% !important;
+                                                line-height: 50px;
+                                                outline: none;
+                                                padding-left: 18px;
+                                                padding-right: 30px;
+                                                position: relative;
+                                                text-align: left !important;
+                                                -webkit-transition: all 0.2s ease-in-out;
+                                                transition: all 0.2s ease-in-out;
+                                                -webkit-user-select: none;
+                                                -moz-user-select: none;
+                                                -ms-user-select: none;
+                                                user-select: none;
+                                                white-space: nowrap;
+                                                width: auto;
+                                                border-radius: 0;
+                                                margin-bottom: 30px;
+                                                height: 50px !important;
+                                                font-size: 16px;
+                                                font-weight: 400;
+                                                color: #919191;">
+                                            <?php
+                                                $sql = "SELECT * FROM tb_kamar";
+                                                $result = $conn->query($sql);
+                                                if ($result->num_rows > 0) {
+                                                //membaca data pada baris tabel
+                                                while ($row = $result->fetch_assoc()) {
+                                                ?>
+                                                    <option value="<?php echo $row["id_kamar"]; ?>"> <?php echo $row["nama_kamar"]; ?> </option>
+                                                <?php
+                                                    }
+                                                }
+                                            ?>
+                                        </select>
+                                    </div>
+                                    <div class="col-xl-12">
+                                        <input type="number" name="jkamar" id="jkamar" placeholder="Jumlah Kamar" style="
+                                            -webkit-tap-highlight-color: transparent;
+                                            background-color: #fff;
+                                            border: solid 1px #E2E2E2;
+                                            box-sizing: border-box;
+                                            clear: both;
+                                            cursor: pointer;
+                                            display: block;
+                                            float: left;
+                                            font-family: 'Raleway',sans-serif;
+                                            border-radius: 0;
+                                            margin-bottom: 30px;
+                                            height: 50px !important;
+                                            font-size: 16px;
+                                            font-weight: 400;
+                                            color: #919191;
+                                            width: 100% !important;
+                                            line-height: 50px;
+                                            outline: none;
+                                            padding-left: 18px;
+                                            padding-right: 30px;
+                                            position: relative;
+                                            text-align: left !important;"
+                                            onfocus="this.placeholder = ''" onblur="this.placeholder = 'Jumlah Kamar'" required
+                                            class="single-input">
+                                    </div>
+                                    <div class="col-xl-12">
+                                        <input type="text" name="nama" id="nama" placeholder="Nama Pemesan" style="
+                                            -webkit-tap-highlight-color: transparent;
+                                            background-color: #fff;
+                                            border: solid 1px #E2E2E2;
+                                            box-sizing: border-box;
+                                            clear: both;
+                                            cursor: pointer;
+                                            display: block;
+                                            float: left;
+                                            font-family: 'Raleway',sans-serif;
+                                            border-radius: 0;
+                                            margin-bottom: 30px;
+                                            height: 50px !important;
+                                            font-size: 16px;
+                                            font-weight: 400;
+                                            color: #919191;
+                                            width: 100% !important;
+                                            line-height: 50px;
+                                            outline: none;
+                                            padding-left: 18px;
+                                            padding-right: 30px;
+                                            position: relative;
+                                            text-align: left !important;"
+                                            onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nama Pemesan'" required
+                                            class="single-input">
+                                    </div>
+                                    <div class="col-xl-12">
+                                        <input type="email" name="email" id="email" placeholder="Email" style="
+                                            -webkit-tap-highlight-color: transparent;
+                                            background-color: #fff;
+                                            border: solid 1px #E2E2E2;
+                                            box-sizing: border-box;
+                                            clear: both;
+                                            cursor: pointer;
+                                            display: block;
+                                            float: left;
+                                            font-family: 'Raleway',sans-serif;
+                                            border-radius: 0;
+                                            margin-bottom: 30px;
+                                            height: 50px !important;
+                                            font-size: 16px;
+                                            font-weight: 400;
+                                            color: #919191;
+                                            width: 100% !important;
+                                            line-height: 50px;
+                                            outline: none;
+                                            padding-left: 18px;
+                                            padding-right: 30px;
+                                            position: relative;
+                                            text-align: left !important;"
+                                            onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'" required
+                                            class="single-input">
+                                    </div>
+                                    <div class="col-xl-12">
+                                        <input type="text" name="hp" id="hp" placeholder="No Telepon" style="
+                                            -webkit-tap-highlight-color: transparent;
+                                            background-color: #fff;
+                                            border: solid 1px #E2E2E2;
+                                            box-sizing: border-box;
+                                            clear: both;
+                                            cursor: pointer;
+                                            display: block;
+                                            float: left;
+                                            font-family: 'Raleway',sans-serif;
+                                            border-radius: 0;
+                                            margin-bottom: 30px;
+                                            height: 50px !important;
+                                            font-size: 16px;
+                                            font-weight: 400;
+                                            color: #919191;
+                                            width: 100% !important;
+                                            line-height: 50px;
+                                            outline: none;
+                                            padding-left: 18px;
+                                            padding-right: 30px;
+                                            position: relative;
+                                            text-align: left !important;"
+                                            onfocus="this.placeholder = ''" onblur="this.placeholder = 'No Telepon'" required
+                                            class="single-input">
+                                    </div>
+                                    <div class="col-xl-12">
+                                        <input type="text" name="tamu" id="tamu" placeholder="Nama Tamu" style="
+                                            -webkit-tap-highlight-color: transparent;
+                                            background-color: #fff;
+                                            border: solid 1px #E2E2E2;
+                                            box-sizing: border-box;
+                                            clear: both;
+                                            cursor: pointer;
+                                            display: block;
+                                            float: left;
+                                            font-family: 'Raleway',sans-serif;
+                                            border-radius: 0;
+                                            margin-bottom: 30px;
+                                            height: 50px !important;
+                                            font-size: 16px;
+                                            font-weight: 400;
+                                            color: #919191;
+                                            width: 100% !important;
+                                            line-height: 50px;
+                                            outline: none;
+                                            padding-left: 18px;
+                                            padding-right: 30px;
+                                            position: relative;
+                                            text-align: left !important;"
+                                            onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nama Tamu'" required
+                                            class="single-input">
+                                    </div>
+                                    <div class="col-xl-12">
+                                        <button type="submit" id="konfirmasi" class="boxed-btn3">Konfirmasi Pesanan</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
-                    </form>
-                </div>
-            </div>
-    </form>
+                    </div>
+            </form>
 <!-- form itself end -->
     <!-- JS here -->
     <script src="montana-master/js/vendor/modernizr-3.5.0.min.js"></script>

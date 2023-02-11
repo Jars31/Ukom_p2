@@ -54,11 +54,6 @@ include "includes/koneksi.php";
                             </div>
                         </div>
                         <div class="col-xl-2 col-lg-2">
-                            <div class="logo-img">
-                                <a href="index.php">
-                                    <img src="img/logo.png" alt="">
-                                </a>
-                            </div>
                         </div>
                         <div class="col-xl-5 col-lg-4 d-none d-lg-block">
                             <div class="book_room">
@@ -128,10 +123,10 @@ include "includes/koneksi.php";
                 <div class="col-xl-7 col-lg-7">
                     <div class="about_thumb d-flex">
                         <div class="img_1">
-                            <img src="img/about/about_1.png" alt="">
+                            <img src="montana-master/img/about/about_1.png" alt="">
                         </div>
                         <div class="img_2">
-                            <img src="img/about/about_2.png" alt="">
+                            <img src="montana-master/img/about/about_2.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -158,7 +153,7 @@ include "includes/koneksi.php";
     <!-- instragram_area_start -->
     <div class="instragram_area">
         <div class="single_instagram">
-            <img src="img/instragram/1.png" alt="">
+            <img src="montana-master/img/instragram/1.png" alt="">
             <div class="ovrelay">
                 <a href="#">
                     <i class="fa fa-instagram"></i>
@@ -166,7 +161,7 @@ include "includes/koneksi.php";
             </div>
         </div>
         <div class="single_instagram">
-            <img src="img/instragram/2.png" alt="">
+            <img src="montana-master/img/instragram/2.png" alt="">
             <div class="ovrelay">
                 <a href="#">
                     <i class="fa fa-instagram"></i>
@@ -174,7 +169,7 @@ include "includes/koneksi.php";
             </div>
         </div>
         <div class="single_instagram">
-            <img src="img/instragram/3.png" alt="">
+            <img src="montana-master/img/instragram/3.png" alt="">
             <div class="ovrelay">
                 <a href="#">
                     <i class="fa fa-instagram"></i>
@@ -182,7 +177,7 @@ include "includes/koneksi.php";
             </div>
         </div>
         <div class="single_instagram">
-            <img src="img/instragram/4.png" alt="">
+            <img src="montana-master/img/instragram/4.png" alt="">
             <div class="ovrelay">
                 <a href="#">
                     <i class="fa fa-instagram"></i>
@@ -190,7 +185,7 @@ include "includes/koneksi.php";
             </div>
         </div>
         <div class="single_instagram">
-            <img src="img/instragram/5.png" alt="">
+            <img src="montana-master/img/instragram/5.png" alt="">
             <div class="ovrelay">
                 <a href="#">
                     <i class="fa fa-instagram"></i>
@@ -245,16 +240,88 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                 <div class="popup_box ">
                         <div class="popup_inner">
                             <h3>Form Reservasi</h3>
-                            <form>
+                            <form id="form_pesan">
                                 <div class="row">
                                     <div class="col-xl-6">
-                                        <input id="datepicker" placeholder="Tanggal Check IN" name="masuk">
+                                        <input type="date" id="masuk" placeholder="Tanggal Check IN" name="masuk" style="-webkit-tap-highlight-color: transparent;
+                                          background-color: #fff;
+                                          border: solid 1px #E2E2E2;
+                                          box-sizing: border-box;
+                                          clear: both;
+                                          cursor: pointer;
+                                          display: block;
+                                          float: left;
+                                          font-family: 'Raleway',sans-serif;
+                                          border-radius: 0;
+                                          margin-bottom: 30px;
+                                          height: 50px !important;
+                                          font-size: 16px;
+                                          font-weight: 400;
+                                          color: #919191;
+                                          width: 100% !important;
+                                          line-height: 50px;
+                                          outline: none;
+                                          padding-left: 18px;
+                                          padding-right: 30px;
+                                          position: relative;
+                                          text-align: left !important">
                                     </div>
                                     <div class="col-xl-6">
-                                        <input id="datepicker2" placeholder="Tanggal Check Out" name="keluar">
+                                        <input type="date" id="keluar" placeholder="Tanggal Check Out" name="keluar" style="-webkit-tap-highlight-color: transparent;
+                                          background-color: #fff;
+                                          border: solid 1px #E2E2E2;
+                                          box-sizing: border-box;
+                                          clear: both;
+                                          cursor: pointer;
+                                          display: block;
+                                          float: left;
+                                          font-family: 'Raleway',sans-serif;
+                                          border-radius: 0;
+                                          margin-bottom: 30px;
+                                          height: 50px !important;
+                                          font-size: 16px;
+                                          font-weight: 400;
+                                          color: #919191;
+                                          width: 100% !important;
+                                          line-height: 50px;
+                                          outline: none;
+                                          padding-left: 18px;
+                                          padding-right: 30px;
+                                          position: relative;
+                                          text-align: left !important">
                                     </div>
                                     <div class="col-xl-12">
-                                        <select class="form-select wide" id="default-select" class="" name="idkamar">
+                                        <select class="form-select wide" id="idkamar" class="" name="idkamar" style="-webkit-tap-highlight-color: transparent;
+                                                background-color: #fff;
+                                                border: solid 1px #E2E2E2;
+                                                box-sizing: border-box;
+                                                clear: both;
+                                                cursor: pointer;
+                                                display: block;
+                                                float: left;
+                                                font-family: 'Raleway',sans-serif;
+                                                font-weight: normal;
+                                                width: 100% !important;
+                                                line-height: 50px;
+                                                outline: none;
+                                                padding-left: 18px;
+                                                padding-right: 30px;
+                                                position: relative;
+                                                text-align: left !important;
+                                                -webkit-transition: all 0.2s ease-in-out;
+                                                transition: all 0.2s ease-in-out;
+                                                -webkit-user-select: none;
+                                                -moz-user-select: none;
+                                                -ms-user-select: none;
+                                                user-select: none;
+                                                white-space: nowrap;
+                                                width: auto;
+                                                border-radius: 0;
+                                                margin-bottom: 30px;
+                                                height: 50px !important;
+                                                font-size: 16px;
+                                                font-weight: 400;
+                                                color: #919191;">
                                             <?php
                                                 $sql = "SELECT * FROM tb_kamar";
                                                 $result = $conn->query($sql);
@@ -270,7 +337,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                                         </select>
                                     </div>
                                     <div class="col-xl-12">
-                                        <input type="number" name="jkamar" placeholder="Jumlah Kamar" style="
+                                        <input type="number" name="jkamar" id="jkamar" placeholder="Jumlah Kamar" style="
                                             -webkit-tap-highlight-color: transparent;
                                             background-color: #fff;
                                             border: solid 1px #E2E2E2;
@@ -297,7 +364,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                                             class="single-input">
                                     </div>
                                     <div class="col-xl-12">
-                                        <input type="text" name="nama" placeholder="Nama Pemesan" style="
+                                        <input type="text" name="nama" id="nama" placeholder="Nama Pemesan" style="
                                             -webkit-tap-highlight-color: transparent;
                                             background-color: #fff;
                                             border: solid 1px #E2E2E2;
@@ -324,7 +391,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                                             class="single-input">
                                     </div>
                                     <div class="col-xl-12">
-                                        <input type="email" name="email" placeholder="Email" style="
+                                        <input type="email" name="email" id="email" placeholder="Email" style="
                                             -webkit-tap-highlight-color: transparent;
                                             background-color: #fff;
                                             border: solid 1px #E2E2E2;
@@ -351,7 +418,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                                             class="single-input">
                                     </div>
                                     <div class="col-xl-12">
-                                        <input type="text" name="hp" placeholder="No Telepon" style="
+                                        <input type="text" name="hp" id="hp" placeholder="No Telepon" style="
                                             -webkit-tap-highlight-color: transparent;
                                             background-color: #fff;
                                             border: solid 1px #E2E2E2;
@@ -378,7 +445,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                                             class="single-input">
                                     </div>
                                     <div class="col-xl-12">
-                                        <input type="text" name="tamu" placeholder="Nama Tamu" style="
+                                        <input type="text" name="tamu" id="tamu" placeholder="Nama Tamu" style="
                                             -webkit-tap-highlight-color: transparent;
                                             background-color: #fff;
                                             border: solid 1px #E2E2E2;
