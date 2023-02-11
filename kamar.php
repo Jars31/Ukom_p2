@@ -46,8 +46,8 @@ include "includes/koneksi.php";
                             <div class="main-menu  d-none d-lg-block">
                                 <nav>
                                     <ul id="navigation">
-                                        <li><a class="active" href="index.php">Home</a></li>
-                                        <li><a href="kamar.php">Kamar</a></li>
+                                        <li><a href="index.php">Home</a></li>
+                                        <li><a class="active" href="kamar.php">Kamar</a></li>
                                         <li><a href="fasilitas.php">Fasilitas</a></li>
                                     </ul>
                                 </nav>
@@ -77,82 +77,51 @@ include "includes/koneksi.php";
     </header>
     <!-- header-end -->
 
-    <!-- slider_area_start -->
-    <div class="slider_area">
-        <div class="slider_active owl-carousel">
-            <div class="single_slider d-flex align-items-center justify-content-center slider_bg_1">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <div class="slider_text text-center">
-                                <h3>Hotel Jars</h3>
-                                <p>Selamat datang di Hotel Kami!</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="single_slider  d-flex align-items-center justify-content-center slider_bg_2">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <div class="slider_text text-center">
-                                <h3>Hotel Jars</h3>
-                                <p>Kami Menyediakan Kamar Hotel Yang Terbaik!</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <!-- bradcam_area_start -->
+    <div class="bradcam_area breadcam_bg_1">
+        <h3>Daftar Kamar</h3>
     </div>
-    <!-- slider_area_end -->
-
-    <!-- about_area_start -->
-    <div class="about_area">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-5 col-lg-5">
-                    <div class="about_info">
-                        <div class="section_title mb-20px">
-                            <span>Tentang Kami</span>
-                            <h3>Hotel Yang Mewah <br>
-                               Dengan Pemandangan Alami</h3>
-                        </div>
-                        <p>Suscipit libero pretium nullam potenti. Interdum, blandit phasellus consectetuer dolor ornare
-                            dapibus enim ut tincidunt rhoncus tellus sollicitudin pede nam maecenas, dolor sem. Neque
-                            sollicitudin enim. Dapibus lorem feugiat facilisi faucibus et. Rhoncus.</p>
-                        <a href="#" class="line-button">Learn More</a>
-                    </div>
-                </div>
-                <div class="col-xl-7 col-lg-7">
-                    <div class="about_thumb d-flex">
-                        <div class="img_1">
-                            <img src="img/about/about_1.png" alt="">
-                        </div>
-                        <div class="img_2">
-                            <img src="img/about/about_2.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- about_area_end -->
+    <!-- bradcam_area_end -->
 
     <!-- offers_area_start -->
+    <div class="offers_area padding_top">
+        <div class="container">
+            <div class="row">
+             <?php
+                $sql = "SELECT * FROM tb_fasilitas_kamar ORDER BY id DESC LIMIT 5";
+                $result = $conn->query($sql);
+                if ($result->num_rows > 0) {
+                    //membaca data pada baris tabel
+                    while ($row = $result->fetch_assoc()) {
+                    $idk = $row["id_kamar"];
+                    $gambar = $row["gambar"];
+                    $fas = $row["fasilitas"];
+
+                    $sql2    = "SELECT nama_kamar FROM tb_kamar WHERE id_kamar= '$idk'";
+                    $result2 = $conn->query($sql2);
+                    $row2    = $result2->fetch_assoc();
+                    ?>
+                    <div class="col-xl-4 col-md-4">
+                        <div class="single_offers">
+                            <div class="about_thumb">
+                                <img src="<?php echo $gambar; ?>" alt="">
+                            </div>
+                            <h3><?php echo $row2["nama_kamar"]; ?></h3>
+                            <ul>
+                                <li><?php echo $fas; ?></li>
+                            </ul>
+                        </div>
+                    </div>
+                <?php
+                    }
+                }
+                ?>
+            </div>
+        </div>
+    </div>
     <!-- offers_area_end -->
 
-    <!-- video_area_start -->
-    <!-- video_area_end -->
-
-    <!-- about_area_start -->
-    <!-- about_area_end -->
-
     <!-- features_room_startt -->
-    <!-- features_room_end -->
-
-    <!-- forQuery_start -->
     <!-- forQuery_end-->
 
     <!-- instragram_area_start -->
@@ -199,7 +168,7 @@ include "includes/koneksi.php";
         </div>
     </div>
     <!-- instragram_area_end -->
-
+    
     <!-- footer -->
     <footer class="footer">
         <div class="copy-right_text">
@@ -238,10 +207,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         </div>
     </footer>
 
-    <!-- link that opens popup -->
-
     <!-- form itself end-->
-        <form id="test-form" class="white-popup-block mfp-hide">
+    <form id="test-form" class="white-popup-block mfp-hide">
                 <div class="popup_box ">
                         <div class="popup_inner">
                             <h3>Form Reservasi</h3>
@@ -412,7 +379,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                         </div>
                     </div>
             </form>
-    <!-- form itself end -->
+<!-- form itself end -->
+
 
     <!-- JS here -->
     <script src="montana-master/js/vendor/modernizr-3.5.0.min.js"></script>
@@ -433,7 +401,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="montana-master/js/jquery.magnific-popup.min.js"></script>
     <script src="montana-master/js/plugins.js"></script>
     <script src="montana-master/js/gijgo.min.js"></script>
-    <script src="crud_js/pesan.js"></script>
 
     <!--contact js-->
     <script src="montana-master/js/contact.js"></script>
@@ -459,57 +426,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         });
     </script>
 
-<script>
-    $(document).ready(function() {
-
-      /*KONDISI SAAT WEBSITE DIJALANKAN PERTAMA KALI*/
-      $('#panel_cek').hide();
-      $('#panel_fasilitas_kami').hide();
-      $('#panel_pemesanan').hide();
-      $('#panel_tentang_kami').show();
-      $('#panel_kamar').hide();
-
-      /*KONDISI TOMBOL PESAN SEKARANG DI KLIK*/
-      $("#tombol_pesan").click(function() {
-        $('#panel_tentang_kami').hide();
-        $('#panel_fasilitas_kami').hide();
-        $('#panel_cek').show();
-        $('#panel_pemesanan').show();
-        $('#panel_kamar').hide();
-        $('#demo_slide').hide();
-      });
-
-      /*KONDISI TOMBOL BATAL SAAT DI KLIK*/
-      $("#tombol_batal").click(function() {
-        $('#panel_cek').hide();
-        $('#panel_fasilitas_kami').hide();
-        $('#panel_pemesanan').hide();
-        $('#panel_tentang_kami').show();
-        $('#demo_slide').show();
-        $('#panel_kamar').hide();
-      });
-
-      /*KONDISI TOMBOL BATAL SAAT DI KLIK*/
-      $("#tombol_fasilitas").click(function() {
-        $('#panel_cek').hide();
-        $('#panel_fasilitas_kami').show();
-        $('#panel_pemesanan').hide();
-        $('#panel_tentang_kami').hide();
-        $('#panel_kamar').hide();
-        $('#demo_slide').hide();
-      });
-      /*KONDISI TOMBOL BATAL SAAT DI KLIK*/
-      $("#tombol_kamar").click(function() {
-        $('#panel_cek').hide();
-        $('#panel_fasilitas_kami').hide();
-        $('#panel_pemesanan').hide();
-        $('#panel_tentang_kami').hide();
-        $('#panel_kamar').show();
-        $('#demo_slide').hide();
-      });
-
-    });
-  </script>
 
 
 </body>
