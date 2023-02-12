@@ -5,7 +5,6 @@
   <title>Admin - Hotel Booking</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" type="image/x-icon" href="../hotel.png" />
   <link href="../css/bootstrap5.0.1.min.css" rel="stylesheet">
 </head>
 

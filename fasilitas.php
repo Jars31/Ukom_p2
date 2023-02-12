@@ -13,7 +13,7 @@ include "includes/koneksi.php";
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- <link rel="manifest" href="site.webmanifest"> -->
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png">
+
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
@@ -89,32 +89,32 @@ include "includes/koneksi.php";
         <div class="container">
             <div class="row">
                 <?php
-                    $aktif = "active";
-                    $sql = "SELECT * FROM tb_fasilitas_umum ORDER BY id DESC LIMIT 5";
-                    $result = $conn->query($sql);
-                    if ($result->num_rows > 0) {
+                $aktif = "active";
+                $sql = "SELECT * FROM tb_fasilitas_umum ORDER BY id DESC LIMIT 5";
+                $result = $conn->query($sql);
+                if ($result->num_rows > 0) {
                     //membaca data pada baris tabel
                     while ($row = $result->fetch_assoc()) {
                         $nf = $row["nama_fasilitas"];
                         $gambar = $row["gambar"];
                         $ket = $row["keterangan"];
                 ?>
-                <div class="col-lg-8 mb-6 mb-lg-1">
-                    <article class="blog_item">
-                        <div class="blog_item_img">
-                            <img class="card-img rounded-0" src="<?php echo $gambar; ?>" alt="">
+                        <div class="col-lg-8 mb-6 mb-lg-1">
+                            <article class="blog_item">
+                                <div class="blog_item_img">
+                                    <img class="card-img rounded-0" src="<?php echo $gambar; ?>" alt="">
+                                </div>
+                                <div class="blog_details">
+                                    <a class="d-inline-block" href="single-blog.html">
+                                        <h2><?php echo $nf; ?></h2>
+                                    </a>
+                                    <p><?php echo $ket; ?></p>
+                                </div>
+                            </article>
                         </div>
-                        <div class="blog_details">
-                            <a class="d-inline-block" href="single-blog.html">
-                                <h2><?php echo $nf; ?></h2>
-                            </a>
-                            <p><?php echo $ket; ?></p>
-                        </div>
-                    </article>
-                </div>
                 <?php
-                      }
                     }
+                }
                 ?>
             </div>
         </div>
@@ -130,8 +130,10 @@ include "includes/koneksi.php";
                     <div class="col-xl-8 col-md-7 col-lg-9">
                         <p class="copy_right">
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            Copyright &copy;<script>
+                                document.write(new Date().getFullYear());
+                            </script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </div>
                     <div class="col-xl-4 col-md-5 col-lg-3">
                         <div class="socail_links">
@@ -162,13 +164,13 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
     <!-- form itself end-->
     <form id="test-form" class="white-popup-block mfp-hide">
-                <div class="popup_box ">
-                        <div class="popup_inner">
-                            <h3>Form Reservasi</h3>
-                            <form id="form_pesan">
-                                <div class="row">
-                                    <div class="col-xl-6">
-                                        <input type="date" id="masuk" placeholder="Tanggal Check IN" name="masuk" style="-webkit-tap-highlight-color: transparent;
+        <div class="popup_box ">
+            <div class="popup_inner">
+                <h3>Form Reservasi</h3>
+                <form id="form_pesan">
+                    <div class="row">
+                        <div class="col-xl-6">
+                            <input type="date" id="masuk" placeholder="Tanggal Check IN" name="masuk" style="-webkit-tap-highlight-color: transparent;
                                           background-color: #fff;
                                           border: solid 1px #E2E2E2;
                                           box-sizing: border-box;
@@ -190,9 +192,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                                           padding-right: 30px;
                                           position: relative;
                                           text-align: left !important">
-                                    </div>
-                                    <div class="col-xl-6">
-                                        <input type="date" id="keluar" placeholder="Tanggal Check Out" name="keluar" style="-webkit-tap-highlight-color: transparent;
+                        </div>
+                        <div class="col-xl-6">
+                            <input type="date" id="keluar" placeholder="Tanggal Check Out" name="keluar" style="-webkit-tap-highlight-color: transparent;
                                           background-color: #fff;
                                           border: solid 1px #E2E2E2;
                                           box-sizing: border-box;
@@ -214,9 +216,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                                           padding-right: 30px;
                                           position: relative;
                                           text-align: left !important">
-                                    </div>
-                                    <div class="col-xl-12">
-                                        <select class="form-select wide" id="idkamar" class="" name="idkamar" style="-webkit-tap-highlight-color: transparent;
+                        </div>
+                        <div class="col-xl-12">
+                            <select class="form-select wide" id="idkamar" class="" name="idkamar" style="-webkit-tap-highlight-color: transparent;
                                                 background-color: #fff;
                                                 border: solid 1px #E2E2E2;
                                                 box-sizing: border-box;
@@ -247,22 +249,22 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                                                 font-size: 16px;
                                                 font-weight: 400;
                                                 color: #919191;">
-                                            <?php
-                                                $sql = "SELECT * FROM tb_kamar";
-                                                $result = $conn->query($sql);
-                                                if ($result->num_rows > 0) {
-                                                //membaca data pada baris tabel
-                                                while ($row = $result->fetch_assoc()) {
-                                                ?>
-                                                    <option value="<?php echo $row["id_kamar"]; ?>"> <?php echo $row["nama_kamar"]; ?> </option>
-                                                <?php
-                                                    }
-                                                }
-                                            ?>
-                                        </select>
-                                    </div>
-                                    <div class="col-xl-12">
-                                        <input type="number" name="jkamar" id="jkamar" placeholder="Jumlah Kamar" style="
+                                <?php
+                                $sql = "SELECT * FROM tb_kamar";
+                                $result = $conn->query($sql);
+                                if ($result->num_rows > 0) {
+                                    //membaca data pada baris tabel
+                                    while ($row = $result->fetch_assoc()) {
+                                ?>
+                                        <option value="<?php echo $row["id_kamar"]; ?>"> <?php echo $row["nama_kamar"]; ?> </option>
+                                <?php
+                                    }
+                                }
+                                ?>
+                            </select>
+                        </div>
+                        <div class="col-xl-12">
+                            <input type="number" name="jkamar" id="jkamar" placeholder="Jumlah Kamar" style="
                                             -webkit-tap-highlight-color: transparent;
                                             background-color: #fff;
                                             border: solid 1px #E2E2E2;
@@ -284,12 +286,10 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                                             padding-left: 18px;
                                             padding-right: 30px;
                                             position: relative;
-                                            text-align: left !important;"
-                                            onfocus="this.placeholder = ''" onblur="this.placeholder = 'Jumlah Kamar'" required
-                                            class="single-input">
-                                    </div>
-                                    <div class="col-xl-12">
-                                        <input type="text" name="nama" id="nama" placeholder="Nama Pemesan" style="
+                                            text-align: left !important;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Jumlah Kamar'" required class="single-input">
+                        </div>
+                        <div class="col-xl-12">
+                            <input type="text" name="nama" id="nama" placeholder="Nama Pemesan" style="
                                             -webkit-tap-highlight-color: transparent;
                                             background-color: #fff;
                                             border: solid 1px #E2E2E2;
@@ -311,12 +311,10 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                                             padding-left: 18px;
                                             padding-right: 30px;
                                             position: relative;
-                                            text-align: left !important;"
-                                            onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nama Pemesan'" required
-                                            class="single-input">
-                                    </div>
-                                    <div class="col-xl-12">
-                                        <input type="email" name="email" id="email" placeholder="Email" style="
+                                            text-align: left !important;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nama Pemesan'" required class="single-input">
+                        </div>
+                        <div class="col-xl-12">
+                            <input type="email" name="email" id="email" placeholder="Email" style="
                                             -webkit-tap-highlight-color: transparent;
                                             background-color: #fff;
                                             border: solid 1px #E2E2E2;
@@ -338,12 +336,10 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                                             padding-left: 18px;
                                             padding-right: 30px;
                                             position: relative;
-                                            text-align: left !important;"
-                                            onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'" required
-                                            class="single-input">
-                                    </div>
-                                    <div class="col-xl-12">
-                                        <input type="text" name="hp" id="hp" placeholder="No Telepon" style="
+                                            text-align: left !important;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'" required class="single-input">
+                        </div>
+                        <div class="col-xl-12">
+                            <input type="text" name="hp" id="hp" placeholder="No Telepon" style="
                                             -webkit-tap-highlight-color: transparent;
                                             background-color: #fff;
                                             border: solid 1px #E2E2E2;
@@ -365,12 +361,10 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                                             padding-left: 18px;
                                             padding-right: 30px;
                                             position: relative;
-                                            text-align: left !important;"
-                                            onfocus="this.placeholder = ''" onblur="this.placeholder = 'No Telepon'" required
-                                            class="single-input">
-                                    </div>
-                                    <div class="col-xl-12">
-                                        <input type="text" name="tamu" id="tamu" placeholder="Nama Tamu" style="
+                                            text-align: left !important;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'No Telepon'" required class="single-input">
+                        </div>
+                        <div class="col-xl-12">
+                            <input type="text" name="tamu" id="tamu" placeholder="Nama Tamu" style="
                                             -webkit-tap-highlight-color: transparent;
                                             background-color: #fff;
                                             border: solid 1px #E2E2E2;
@@ -392,19 +386,17 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                                             padding-left: 18px;
                                             padding-right: 30px;
                                             position: relative;
-                                            text-align: left !important;"
-                                            onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nama Tamu'" required
-                                            class="single-input">
-                                    </div>
-                                    <div class="col-xl-12">
-                                        <button type="submit" id="konfirmasi" class="boxed-btn3">Konfirmasi Pesanan</button>
-                                    </div>
-                                </div>
-                            </form>
+                                            text-align: left !important;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nama Tamu'" required class="single-input">
+                        </div>
+                        <div class="col-xl-12">
+                            <button type="submit" id="konfirmasi" class="boxed-btn3">Konfirmasi Pesanan</button>
                         </div>
                     </div>
-            </form>
-<!-- form itself end -->
+                </form>
+            </div>
+        </div>
+    </form>
+    <!-- form itself end -->
     <!-- JS here -->
     <script src="montana-master/js/vendor/modernizr-3.5.0.min.js"></script>
     <script src="montana-master/js/vendor/jquery-1.12.4.min.js"></script>
@@ -437,14 +429,14 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         $('#datepicker').datepicker({
             iconsLibrary: 'fontawesome',
             icons: {
-             rightIcon: '<span class="fa fa-caret-down"></span>'
-         }
+                rightIcon: '<span class="fa fa-caret-down"></span>'
+            }
         });
         $('#datepicker2').datepicker({
             iconsLibrary: 'fontawesome',
             icons: {
-             rightIcon: '<span class="fa fa-caret-down"></span>'
-         }
+                rightIcon: '<span class="fa fa-caret-down"></span>'
+            }
 
         });
     </script>
@@ -452,4 +444,5 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
 
 </body>
+
 </html>

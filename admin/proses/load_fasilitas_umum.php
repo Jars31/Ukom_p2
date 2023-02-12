@@ -27,7 +27,7 @@ include "../../includes/koneksi.php";
         <table id="tb_kamar" class="table table-striped" style="width:100%">
           <thead>
             <tr>
-              <th>Nama Fasilitasr</th>
+              <th>Nama Fasilitas</th>
               <th class="text-center">Keterangan</th>
               <th class="text-center">Aksi</th>
             </tr>
