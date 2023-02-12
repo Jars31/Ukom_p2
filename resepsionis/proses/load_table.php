@@ -108,26 +108,26 @@
             $("#cari_nama").html(data).refresh;
           }
         });
-});
+  });
 
-$(document).ready(function(){
-    var tgl = document.getElementById('tgl');     
-        tgl.valueAsDate = new Date();
-        
-        $("#tgl").on("change",function(){
-            tanggal = tgl.value;
-            //console.log(this.value);
-            $.ajax({
-            url: "proses/cari_tanggal.php",
-            method: "POST",
-            data:{tanggal:tanggal},
-              success: function(data)
-              {
-                //alert(data);return;
-                $("#cari_nama").html(data).refresh;
-              }
-            });
-        });
-});
+  $(document).ready(function(){
+      var tgl = document.getElementById('tgl');     
+          tgl.valueAsDate = new Date();
+          
+          $("#tgl").on("change",function(){
+              tanggal = tgl.value;
+              //console.log(this.value);
+              $.ajax({
+              url: "proses/cari_tanggal.php",
+              method: "POST",
+              data:{tanggal:tanggal},
+                success: function(data)
+                {
+                  //alert(data);return;
+                  $("#cari_nama").html(data).refresh;
+                }
+              });
+          });
+  });
 
 </script>
