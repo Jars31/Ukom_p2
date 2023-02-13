@@ -10,7 +10,7 @@
 
 <body>
 
-  <div class="p-2 bg-secondary text-white text-center">
+  <div class="p-2 bg-primary text-white text-center">
     <h1>HOTEL JARS</h1>
     <p>Selamat datang di Hotel Kami!</p>
   </div>

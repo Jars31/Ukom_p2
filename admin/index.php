@@ -14,20 +14,18 @@ if (isset($_SESSION['admin'])) {
   <title>RESPSIONIS - HOTEL BOOKING</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" type="image/x-icon" href="../hotel.png" />
   <link href="../css/bootstrap5.0.1.min.css" rel="stylesheet">
 </head>
 
 <body>
 
-  <div class="p-2 bg-secondary text-white text-center">
+  <div class="p-2 bg-primary text-white text-center">
     <h1>HOTEL JARS</h1>
     <p>Selamat datang di Hotel Kami!</p>
   </div>
 
   <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">ADMIN</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
         <span class="navbar-toggler-icon"></span>
       </button>

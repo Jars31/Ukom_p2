@@ -28,7 +28,7 @@ include "includes/koneksi.php";
     <link rel="stylesheet" href="montana-master/css/animate.css">
     <link rel="stylesheet" href="montana-master/css/slicknav.css">
     <link rel="stylesheet" href="montana-master/css/style.css">
-    <link rel="stylesheet" href="montana-master/css/responsive.css">
+    <!-- <link rel="stylesheet" href="montana-master/css/responsive.css"> -->
 </head>
 
 <body>
@@ -177,7 +177,7 @@ include "includes/koneksi.php";
     <!-- link that opens popup -->
 
     <!-- form itself end-->
-    <form id="test-form" class="white-popup-block mfp-hide">
+    <div id="test-form" class="white-popup-block mfp-hide">
         <div class="popup_box ">
             <div class="popup_inner">
                 <h3>Form Reservasi</h3>
@@ -300,7 +300,7 @@ include "includes/koneksi.php";
                                             padding-left: 18px;
                                             padding-right: 30px;
                                             position: relative;
-                                            text-align: left !important;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Jumlah Kamar'" required class="single-input">
+                                            text-align: left !important;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Jumlah Kamar'" class="single-input">
                         </div>
                         <div class="col-xl-12">
                             <input type="text" name="nama" id="nama" placeholder="Nama Pemesan" style="
@@ -325,7 +325,7 @@ include "includes/koneksi.php";
                                             padding-left: 18px;
                                             padding-right: 30px;
                                             position: relative;
-                                            text-align: left !important;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nama Pemesan'" required class="single-input">
+                                            text-align: left !important;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nama Pemesan'" class="single-input">
                         </div>
                         <div class="col-xl-12">
                             <input type="email" name="email" id="email" placeholder="Email" style="
@@ -350,7 +350,7 @@ include "includes/koneksi.php";
                                             padding-left: 18px;
                                             padding-right: 30px;
                                             position: relative;
-                                            text-align: left !important;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'" required class="single-input">
+                                            text-align: left !important;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'" class="single-input">
                         </div>
                         <div class="col-xl-12">
                             <input type="text" name="hp" id="hp" placeholder="No Telepon" style="
@@ -375,7 +375,7 @@ include "includes/koneksi.php";
                                             padding-left: 18px;
                                             padding-right: 30px;
                                             position: relative;
-                                            text-align: left !important;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'No Telepon'" required class="single-input">
+                                            text-align: left !important;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'No Telepon'" class="single-input">
                         </div>
                         <div class="col-xl-12">
                             <input type="text" name="tamu" id="tamu" placeholder="Nama Tamu" style="
@@ -400,7 +400,7 @@ include "includes/koneksi.php";
                                             padding-left: 18px;
                                             padding-right: 30px;
                                             position: relative;
-                                            text-align: left !important;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nama Tamu'" required class="single-input">
+                                            text-align: left !important;" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nama Tamu'" class="single-input">
                         </div>
                         <div class="col-xl-12">
                             <button type="submit" id="konfirmasi" class="boxed-btn3">Konfirmasi Pesanan</button>
@@ -409,7 +409,7 @@ include "includes/koneksi.php";
                 </form>
             </div>
         </div>
-    </form>
+    </div>
     <!-- form itself end -->
 
     <!-- JS here -->
@@ -432,6 +432,7 @@ include "includes/koneksi.php";
     <script src="montana-master/js/plugins.js"></script>
     <script src="montana-master/js/gijgo.min.js"></script>
     <script src="crud_js/pesan.js"></script>
+    <!-- <script src="js/jquery.min.js"></script> -->
 
     <!--contact js-->
     <script src="montana-master/js/contact.js"></script>
@@ -507,6 +508,30 @@ include "includes/koneksi.php";
             });
 
         });
+    </script>
+
+    <script>
+        //     $(document).ready(function() {
+        //         $("#form_pesan").on("submit", function(e) {
+        //             e.preventDefault();
+        //             var masuk = $("#masuk").val();
+        //             var keluar = $("#keluar").val();
+        //             var idkamar = $("#idkamar").val();
+        //             $.ajax({
+        //                 type: "POST",
+        //                 url: "bukti_pesan.php",
+        //                 data: {
+        //                     masuk: masuk,
+        //                     keluar: keluar,
+        //                     idkamar: idkamar
+        //                 },
+        //                 success: function(data) {
+        //                     window.location.href = "bukti_pesan.php";
+        //                 }
+        //             });
+        //         });
+        //     });
+        // 
     </script>
 
 
