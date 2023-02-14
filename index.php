@@ -114,7 +114,8 @@ include "includes/koneksi.php";
                             <h3>Hotel Yang Mewah <br>
                                 Dengan Pemandangan Alami</h3>
                         </div>
-                        <p>.</p>
+                        <p>Hotel Jars,memiliki layanan multibahasa, serta pelayanan yang sangat baik.
+                            Kamar mewah dengan TV layar datar, Fasilitas meliputi restoran makanan. Fasilitas lainnya terdiri dari kolam renang dan gym.</p>
 
                     </div>
                 </div>

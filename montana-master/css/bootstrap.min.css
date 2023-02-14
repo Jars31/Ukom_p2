@@ -636,6 +636,16 @@ pre code {
     margin-left: -15px
 }
 
+.row-fasilitas {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -30px;
+    margin-left:  0px
+}
+
 .no-gutters {
     margin-right: 0;
     margin-left: 0

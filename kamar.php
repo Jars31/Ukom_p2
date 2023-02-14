@@ -86,7 +86,7 @@ include "includes/koneksi.php";
     <!-- offers_area_start -->
     <div class="offers_area padding_top">
         <div class="container">
-            <div class="row">
+            <div class="row" style="gap: 25px;">
                 <?php
                 $sql = "SELECT * FROM tb_fasilitas_kamar ORDER BY id DESC";
                 $result = $conn->query($sql);
@@ -101,7 +101,7 @@ include "includes/koneksi.php";
                         $result2 = $conn->query($sql2);
                         $row2    = $result2->fetch_assoc();
                 ?>
-                        <div class="col-xl-4 col-md-4">
+                        <div class="col-xl-0 col-md-4" style="box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);">
                             <div class="single_offers">
                                 <div class="about_thumb">
                                     <img src="<?php echo $gambar; ?>" alt="">

@@ -85,37 +85,39 @@ include "includes/koneksi.php";
 
 
     <!--================Blog Area =================-->
-    <section class="blog_area section-padding">
+    <section class="offers_area padding_top">
         <div class="container">
-            <div class="row">
-                <?php
-                $aktif = "active";
-                $sql = "SELECT * FROM tb_fasilitas_umum ORDER BY id DESC LIMIT 5";
-                $result = $conn->query($sql);
-                if ($result->num_rows > 0) {
-                    //membaca data pada baris tabel
-                    while ($row = $result->fetch_assoc()) {
-                        $nf = $row["nama_fasilitas"];
-                        $gambar = $row["gambar"];
-                        $ket = $row["keterangan"];
-                ?>
-                        <div class="col-xl-4 col-md-4">
-                            <article class="blog_item">
-                                <div class="blog_item_img">
-                                    <img class="card-img rounded-0" src="<?php echo $gambar; ?>" alt="">
-                                </div>
-                                <div class="blog_details">
-                                    <a class="d-inline-block" href="single-blog.html">
-                                        <h2><?php echo $nf; ?></h2>
-                                    </a>
-                                    <p><?php echo $ket; ?></p>
-                                </div>
-                            </article>
-                        </div>
-                <?php
+            <div class="row" style="gap: 15px;">
+                <div class="row-fasilitas">
+                    <?php
+                    $aktif = "active";
+                    $sql = "SELECT * FROM tb_fasilitas_umum ORDER BY id DESC LIMIT 5";
+                    $result = $conn->query($sql);
+                    if ($result->num_rows > 0) {
+                        //membaca data pada baris tabel
+                        while ($row = $result->fetch_assoc()) {
+                            $nf = $row["nama_fasilitas"];
+                            $gambar = $row["gambar"];
+                            $ket = $row["keterangan"];
+                    ?>
+                            <div class="row-xl-0 col-md-4">
+                                <article class="blog_item">
+                                    <div class="blog_item_img">
+                                        <img class="card-img rounded-0" src="<?php echo $gambar; ?>" alt="">
+                                    </div>
+                                    <div class="blog_details" style="box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);">
+                                        <a class="d-inline-block" href="#">
+                                            <h2><?php echo $nf; ?></h2>
+                                        </a>
+                                        <p><?php echo $ket; ?></p>
+                                    </div>
+                                </article>
+                            </div>
+                    <?php
+                        }
                     }
-                }
-                ?>
+                    ?>
+                </div>
             </div>
         </div>
     </section>
