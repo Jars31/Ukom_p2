@@ -99,7 +99,7 @@ include "includes/koneksi.php";
                         $gambar = $row["gambar"];
                         $ket = $row["keterangan"];
                 ?>
-                        <div class="col-lg-8 mb-6 mb-lg-1">
+                        <div class="col-xl-4 col-md-4">
                             <article class="blog_item">
                                 <div class="blog_item_img">
                                     <img class="card-img rounded-0" src="<?php echo $gambar; ?>" alt="">

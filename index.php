@@ -114,9 +114,7 @@ include "includes/koneksi.php";
                             <h3>Hotel Yang Mewah <br>
                                 Dengan Pemandangan Alami</h3>
                         </div>
-                        <p>Suscipit libero pretium nullam potenti. Interdum, blandit phasellus consectetuer dolor ornare
-                            dapibus enim ut tincidunt rhoncus tellus sollicitudin pede nam maecenas, dolor sem. Neque
-                            sollicitudin enim. Dapibus lorem feugiat facilisi faucibus et. Rhoncus.</p>
+                        <p>.</p>
 
                     </div>
                 </div>
